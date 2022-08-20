@@ -12,11 +12,13 @@ public class LessOneTest {
 
     private ChangeNumbers changeNumbers;
     private CheckNumbers checkNumbers;
+    private CreateCustomArray createCustomArray;
 
     @BeforeAll
     public void setUp() {
         this.changeNumbers = new ChangeNumbers();
         this.checkNumbers = new CheckNumbers();
+        this.createCustomArray = new CreateCustomArray();
     }
 
     @Test
@@ -35,5 +37,22 @@ public class LessOneTest {
             stringInputs.add(String.valueOf(i));
         }
         checkNumbers.checkNumber(stringInputs);
+    }
+
+    @Test
+    public void checkExerciseThree() {
+
+    }
+
+    @Test
+    public void checkExerciseFour() {
+        String[] firstArray = {"7483", "3262", "9182", "4738"};
+        String[] secondArray = {"11", "3262", "45"};
+        String[] resultArray = createCustomArray.createStringCustomArray(firstArray, secondArray);
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String str : resultArray) {
+            stringBuilder.append(str + " ");
+        }
+        System.out.println(stringBuilder);
     }
 }
