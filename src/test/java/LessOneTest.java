@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,6 +14,8 @@ public class LessOneTest {
     private ChangeNumbers changeNumbers;
     private CheckNumbers checkNumbers;
     private CreateCustomArray createCustomArray;
+
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     @BeforeAll
     public void setUp() {
@@ -41,7 +44,31 @@ public class LessOneTest {
 
     @Test
     public void checkExerciseThree() {
+        Scanner scanner = new Scanner(System.in);
+        double totalWeight = 0.0;
+        double alarmWeight = 450.0;
 
+        int personsTotal = 0;
+        int alarmPersonsCount = 6;
+
+        boolean isRunnable = true;
+
+        while (isRunnable) {
+            System.out.println("Вес вошедшего человека (число в формате xxx, xxx.xx):");
+            String weight = scanner.next();
+
+            System.out.println("К имеющимся " + totalWeight + " кг нагрузки - добавилось " + weight + " кг");
+            totalWeight += Double.parseDouble(weight);
+            personsTotal += 1;
+            isRunnable = !((totalWeight >= alarmWeight) || (personsTotal >= alarmPersonsCount));
+        }
+
+        System.out.println("Итого в лифте: " + personsTotal + " человек с весом " + df.format(totalWeight) + " кг");
+        if (totalWeight >= alarmWeight) {
+            System.out.println("Ошибка: превышена допустимая нагрузка!");
+        } else if (personsTotal == 6) {
+            System.out.println("Ошибка: превышено количество людей внури!");
+        }
     }
 
     @Test
