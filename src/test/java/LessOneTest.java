@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 @TestInstance(PER_CLASS)
 public class LessOneTest {
 
-    private ChangeNumbers changeNumbers;
+    private ChangeString changeString;
     private CheckNumbers checkNumbers;
     private CreateCustomArray createCustomArray;
 
@@ -19,7 +19,7 @@ public class LessOneTest {
 
     @BeforeAll
     public void setUp() {
-        this.changeNumbers = new ChangeNumbers();
+        this.changeString = new ChangeString();
         this.checkNumbers = new CheckNumbers();
         this.createCustomArray = new CreateCustomArray();
     }
@@ -30,26 +30,23 @@ public class LessOneTest {
         System.out.println("Введите трехзначное число:");
         String input = scanner.next();
         scanner.close();
-        changeNumbers.swapDigits(input);
+        changeString.swapChars(input);
     }
 
     @Test
     public void checkExerciseTwo() {
-        ArrayList<String> stringInputs = new ArrayList<>();
+        ArrayList<Integer> inputs = new ArrayList<>();
         for (int i = 100; i < 999; i++) {
-            stringInputs.add(String.valueOf(i));
+            inputs.add(i);
         }
-        checkNumbers.checkNumber(stringInputs);
+        checkNumbers.checkNumber(inputs);
     }
 
     @Test
     public void checkExerciseThree() {
         Scanner scanner = new Scanner(System.in);
         double totalWeight = 0.0;
-        double alarmWeight = 450.0;
-
         int personsTotal = 0;
-        int alarmPersonsCount = 6;
 
         boolean isRunnable = true;
 
@@ -60,11 +57,11 @@ public class LessOneTest {
             System.out.println("К имеющимся " + totalWeight + " кг нагрузки - добавилось " + weight + " кг");
             totalWeight += Double.parseDouble(weight);
             personsTotal += 1;
-            isRunnable = !((totalWeight >= alarmWeight) || (personsTotal >= alarmPersonsCount));
+            isRunnable = !((totalWeight >= Constants.ALARM_WEIGHT) || (personsTotal >= Constants.ALARM_PERSONS_COUNT));
         }
 
         System.out.println("Итого в лифте: " + personsTotal + " человек с весом " + df.format(totalWeight) + " кг");
-        if (totalWeight >= alarmWeight) {
+        if (totalWeight >= Constants.ALARM_WEIGHT) {
             System.out.println("Ошибка: превышена допустимая нагрузка!");
         } else if (personsTotal == 6) {
             System.out.println("Ошибка: превышено количество людей внури!");
