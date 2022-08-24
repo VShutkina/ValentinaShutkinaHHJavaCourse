@@ -13,14 +13,15 @@ public class Circle {
         int x = scanner.nextInt();
         System.out.println("Введите координаты центра круга по оси y:");
         int y = scanner.nextInt();
-        isPointLocatedInsideCircle(x, y, r, a, b);
-    }
 
-    public static void isPointLocatedInsideCircle(int x, int y, int r, int a, int b) {
-        if ((x - a) * (x - a) + (y - b) * (y - b) <= r * r) {
+        if (isPointLocatedInsideCircle(x, y, r, a, b)) {
             System.out.println("Точка находится внутри круга");
         } else {
             System.out.println("Точка находится вне круга");
         }
+    }
+
+    public static boolean isPointLocatedInsideCircle(int x, int y, int r, int a, int b) {
+        return (x - a) * (x - a) + (y - b) * (y - b) <= r * r;
     }
 }
