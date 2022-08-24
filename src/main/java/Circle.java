@@ -5,7 +5,7 @@ public class Circle {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите координаты точки по оси х:");
         int a = scanner.nextInt();
-        System.out.println("Введите координаты точки по оси y");
+        System.out.println("Введите координаты точки по оси y:");
         int b = scanner.nextInt();
         System.out.println("Введите радиус круга r:");
         int r = scanner.nextInt();
