@@ -14,12 +14,12 @@ public class Car extends Vehicle {
   }
 
   public void setPassengers(int newPassengers) {
-    if (passengers < PASS_CAPACITY) {
+    if (passengers + newPassengers <= PASS_CAPACITY) {
       System.out.println("К имеющимся " + passengers + " пассажиру(ам) - посадили еще " + newPassengers + " пассажир(ов)");
       passengers = passengers + newPassengers;
       System.out.println("Итого в машине: " + passengers + " человек");
     } else {
-      System.out.println("Невозможно посадить больше людей в машину!");
+      System.out.println("Невозможно посадить больше людей в машину! Можно посадить еще " + (PASS_CAPACITY - passengers));
     }
   }
 

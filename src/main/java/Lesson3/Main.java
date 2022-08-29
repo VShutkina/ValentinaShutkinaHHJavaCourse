@@ -6,10 +6,11 @@ public class Main {
     Car car = new Car("DGF 786", "Lada Granta", "white");
     System.out.println("Добавить пассажиров");
     car.setPassengers(1);
-    car.setPassengers(3);
+    car.setPassengers(2);
     System.out.println("В машине " + car.getPassengers() + " пассажиров");
     System.out.println("Добавляем людей больше, чем вмещает машина");
     car.setPassengers(3);
+    System.out.println("В машине " + car.getPassengers() + " пассажиров");
     System.out.println("Начать движение");
     car.startMoving();
     System.out.println("Текущая скорость " + car.getSpeed());
