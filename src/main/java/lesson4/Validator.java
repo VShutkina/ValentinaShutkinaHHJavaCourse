@@ -32,10 +32,9 @@ public class Validator {
 
   private static void validatePassword(String password,
                                        String confirmPassword) throws WrongPasswordException {
-    String matcherRegEx = "^\\w+$";
     if (password.length() > 20) {
       throw new WrongPasswordException("Password length should be less than 20 character");
-    } else if (!password.matches(matcherRegEx)) {
+    } else if (!password.matches(MATCHER_REG_EX)) {
       throw new WrongPasswordException("Password should contain latin letters, digits and _");
     } else if (!confirmPassword.equals(password)) {
       throw new WrongPasswordException("Confirm password should match origin password");
