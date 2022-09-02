@@ -6,7 +6,7 @@ public class Car extends Vehicle {
   private int passengers = 0;
 
   public Car(String registrationNumber, String model, String color) {
-    super(registrationNumber, model, color);
+    super(registrationNumber, model, color, 80.0, 120);
   }
 
   public int getPassengers() {
