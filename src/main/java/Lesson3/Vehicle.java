@@ -8,7 +8,7 @@ public abstract class Vehicle implements Movable {
   protected String model = "";
   protected String color = "";
   protected double speed = 0.0;
-  private double tankCurrentVolume = 0.0;
+  protected double tankCurrentVolume = 0.0;
 
   protected Vehicle(String registrationNumber, String model, String color, double tankMaxVolume, double maxSpeedValue) {
     this.registrationNumber = registrationNumber;
