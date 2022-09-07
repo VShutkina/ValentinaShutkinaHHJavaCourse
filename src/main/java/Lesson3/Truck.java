@@ -4,7 +4,7 @@ public class Truck extends Vehicle {
   private int truckLoad = 0;
 
   public Truck(String registrationNumber, String model, String color) {
-    super(registrationNumber, model, color);
+    super(registrationNumber, model, color, 500.0, 100);
   }
 
   public int getTruckLoad() {
