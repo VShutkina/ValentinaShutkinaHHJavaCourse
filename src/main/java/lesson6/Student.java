@@ -35,6 +35,10 @@ public class Student {
     }
   }
 
+  public void updateGroup() {
+    group = "G" + getCourse() + "01";
+  }
+
   public void setGradeForSubject() {
     List<Subject> subjects = getLearningSubjects();
     for (Subject subject : subjects) {

@@ -28,6 +28,7 @@ public class Main {
       System.out.println("Такого курса не существует!");
     }
 
+    System.out.println();
     System.out.println("Проставить оценки по итогам сессии");
     deanery.doExam();
     System.out.println("Выводим список студентов после сессии:");
@@ -35,5 +36,8 @@ public class Main {
     System.out.println();
     System.out.println("Перевести студентов на следующий курс или отчислить за неуспеваемость:");
     deanery.makeStudentAssessment();
+    System.out.println();
+    System.out.println("Список студентов, перешедших на следующий год:");
+    deanery.printStudents();
   }
 }

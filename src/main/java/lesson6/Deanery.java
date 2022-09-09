@@ -47,6 +47,7 @@ public class Deanery {
         System.out.println("Студент " + student.getFirstName() + " " + student.getLastName() + " со средним баллом "
             + student.getAverageGrade() + " переведен на следующий курс");
         student.increaseCourse();
+        student.updateGroup();
       } else {
         System.out.println("Студент " + student.getFirstName() + " " + student.getLastName() + " со средним баллом "
             + student.getAverageGrade() + " выпускник");
