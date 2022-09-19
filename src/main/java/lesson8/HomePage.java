@@ -13,7 +13,6 @@ public class HomePage extends BasePage {
   private static final String URL = "https://dzen.ru/";
   @FindBy(xpath = "//li[contains(@class, 'mini-suggest__item')]")
   List<WebElement> autoSuggestList;
-  //  @FindBy(xpath = "//input[@aria-label='Запрос']")
   @FindBy(xpath = "//form/input")
   private WebElement searchField;
   @FindBy(xpath = "//iframe[contains(@class, 'dzen-search')]")
