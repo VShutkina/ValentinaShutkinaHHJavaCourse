@@ -1,6 +1,7 @@
 package lesson6;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Student {
   private final int LAST_COURSE = 5;
@@ -49,7 +50,7 @@ public class Student {
   private List<Subject> getLearningSubjects() {
     return Arrays.stream(Subject.values()).
         filter(t -> t.getCourse() == course)
-        .toList();
+        .collect(Collectors.toList());
   }
 
   public double getAverageGrade() {
