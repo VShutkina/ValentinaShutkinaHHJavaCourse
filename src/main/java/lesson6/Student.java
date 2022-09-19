@@ -8,6 +8,7 @@ public class Student {
   private String lastName;
   private int course;
   private String group;
+  private String type = "NO TYPE";
   private Map<Subject, Integer> gradesMap = new HashMap<>();
 
   public Student(String firstName, String lastName, int course) {
@@ -15,6 +16,14 @@ public class Student {
     this.lastName = lastName;
     this.course = course;
     this.group = "G" + course + "01";
+  }
+
+  public Student(String firstName, String lastName, int course, String type) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.course = course;
+    this.group = "G" + course + "01";
+    this.type = type;
   }
 
   public String getFirstName() {
@@ -67,6 +76,7 @@ public class Student {
         ", Фамилия=" + lastName +
         ", Курс=" + course +
         ", Группа=" + group +
+        ", Тип студента=" + type +
         ", Оценки=" + gradesMap;
   }
 }
