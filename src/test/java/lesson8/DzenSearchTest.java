@@ -38,6 +38,6 @@ public class DzenSearchTest extends BaseTest {
     Assert.assertTrue(searchPage.isSearchPageDisplayed(),
         "Поисковая страница yandex не открылась");
     Assert.assertTrue(searchPage.isSearchResultDisplayed(SEARCH_VALUE),
-        "Результаты поиска на страницу яндекса не верны");
+        "Результаты поиска на странице яндекса не верны");
   }
 }
