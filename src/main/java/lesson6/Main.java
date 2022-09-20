@@ -2,19 +2,24 @@ package lesson6;
 
 import java.util.Scanner;
 
+import static lesson6.StudentType.INTERNATIONAL;
+import static lesson6.StudentType.REGULAR;
+
 public class Main {
   public static void main(String[] args) {
+    StudentFactory studentFactory = new StudentFactory();
     Deanery deanery = new Deanery();
     deanery.addStudentsToDeanery(
-        new Student("Ivan", "Ivanov", 1),
-        new Student("Petr", "Petrov", 1),
-        new Student("Olga", "Ivanova", 1),
-        new Student("Kirill", "Petrov", 2),
-        new Student("Andrey", "Petrov", 2),
-        new Student("Anton", "Petrov", 5),
-        new Student("Antonina", "Petrova", 4),
-        new Student("Anton", "Antonov", 2));
-
+        StudentBuilder.aStudent().withFirstName("Ivan").withLastName("Ivanov").withCourse(1).build(),
+        StudentBuilder.aStudent().withFirstName("Petr").withLastName("Petrov").withCourse(1).build(),
+        StudentBuilder.aStudent().withFirstName("Olga").withLastName("Ivanova").withCourse(1).build(),
+        StudentBuilder.aStudent().withFirstName("Kirill").withLastName("Petrov").withCourse(2).build(),
+        StudentBuilder.aStudent().withFirstName("Andrey").withLastName("Petrov").withCourse(2).build(),
+        StudentBuilder.aStudent().withFirstName("Anton").withLastName("Petrov").withCourse(5).build(),
+        StudentBuilder.aStudent().withFirstName("Antonina").withLastName("Petrova").withCourse(4).build(),
+        StudentBuilder.aStudent().withFirstName("Anton").withLastName("Antonov").withCourse(2).build(),
+        studentFactory.createStudent("John", "Doe", 3, INTERNATIONAL),
+        studentFactory.createStudent("Anna", "Ivanova", 3, REGULAR));
     System.out.println("Выводим список студентов до сессии:");
     deanery.printStudents();
 
