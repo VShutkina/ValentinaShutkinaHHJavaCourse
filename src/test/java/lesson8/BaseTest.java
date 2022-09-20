@@ -1,6 +1,7 @@
 package lesson8;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lesson8.utils.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -12,6 +13,7 @@ public class BaseTest {
 
   @BeforeSuite
   public void suiteSetUp() {
+    Logger.restrictNettyLogger();
     WebDriverManager.chromedriver().setup();
   }
 

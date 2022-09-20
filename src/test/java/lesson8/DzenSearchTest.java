@@ -1,5 +1,6 @@
 package lesson8;
 
+import lesson8.utils.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -21,19 +22,19 @@ public class DzenSearchTest extends BaseTest {
 
   @Test(description = "Проверить поиск на сайте dzen.ru")
   public void checkSearch() {
-    // открываем dzen.ru
+    Logger.info("открываем dzen.ru");
     homePage.openURL();
     Assert.assertEquals(driver.getTitle(), "Дзен", "Название страницы не совпадает");
-    // переходим на нужный iframe
+    Logger.info("переходим на нужный iframe");
     homePage.switchToIframe();
-    // вводим текст в строку поиска
+    Logger.info("вводим текст в строку поиска");
     homePage.fillSearchField(SEARCH_VALUE);
     Assert.assertTrue(homePage.isAutoSuggestResultsDisplayed(SEARCH_VALUE),
         "Автосаджесты не верны");
     homePage.clickSubmitButton();
-    // выходим из iframe
+    Logger.info("выходим из iframe");
     homePage.switchToOriginalWindow();
-    //переключаемся на новую открытую страницу поиска
+    Logger.info("переключаемся на новую открытую страницу поиска");
     homePage.switchToOpenedTab();
     Assert.assertTrue(searchPage.isSearchPageDisplayed(),
         "Поисковая страница yandex не открылась");
