@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test for Lesson 8">
+
+    <test name="Dzen Search Test">
+        <classes>
+            <class name="lesson8.DzenSearchTest">
+                <methods>
+                    <include name="checkSearch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
